@@ -1,0 +1,3517 @@
+{
+	"schema": 2,
+	"created": "2026-11-09T05:30:07.085414581Z",
+	"total_actions": 530,
+	"executed_actions": 530,
+	"wall_ms_total": 6938.045881000001,
+	"actions": [
+		{
+			"action_id": "SPoNBQMPybgPmLOaOxzO",
+			"package": "github.com/wow-look-at-my/ai-proxy/relay.test",
+			"mode": "link",
+			"start": "2026-11-09T05:30:05.852038817Z",
+			"wall_ms": 915.620902,
+			"cmd_real_ms": 882.236691,
+			"cmd_user_ms": 586.547,
+			"cmd_sys_ms": 148.99
+		},
+		{
+			"action_id": "60eae-oWb8mmbxLRjtA-",
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:04.719631566Z",
+			"wall_ms": 456.740928,
+			"cmd_real_ms": 447.708775,
+			"cmd_user_ms": 171.942,
+			"cmd_sys_ms": 19.164
+		},
+		{
+			"package": "github.com/stretchr/testify/assert",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.453563473Z",
+			"wall_ms": 441.525147,
+			"cmd_real_ms": 438.690022,
+			"cmd_user_ms": 198.566,
+			"cmd_sys_ms": 26.874
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.626241155Z",
+			"wall_ms": 405.348735,
+			"cmd_real_ms": 400.864954,
+			"cmd_user_ms": 128.328,
+			"cmd_sys_ms": 16.111
+		},
+		{
+			"action_id": "_76MeTpW1ErCBZqG40cn",
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:04.148168123Z",
+			"wall_ms": 336.019048,
+			"cmd_real_ms": 327.250741,
+			"cmd_user_ms": 121.389,
+			"cmd_sys_ms": 29.805
+		},
+		{
+			"action_id": "d3b-98p6jNcYqfEQ-BDK",
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:05.182401185Z",
+			"wall_ms": 317.623899,
+			"cmd_real_ms": 309.121221,
+			"cmd_user_ms": 259.323,
+			"cmd_sys_ms": 46.58
+		},
+		{
+			"action_id": "DJsfy6IPwe4HRSgI3npj",
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:04.730054207Z",
+			"wall_ms": 308.506172,
+			"cmd_real_ms": 303.645028,
+			"cmd_user_ms": 152.201,
+			"cmd_sys_ms": 25.632
+		},
+		{
+			"package": "github.com/stretchr/testify/require",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.89509672Z",
+			"wall_ms": 265.280419,
+			"cmd_real_ms": 262.691258,
+			"cmd_user_ms": 161.926,
+			"cmd_sys_ms": 26.608
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:05.50044256Z",
+			"wall_ms": 252.334123,
+			"cmd_real_ms": 195.273757,
+			"cmd_user_ms": 158.268,
+			"cmd_sys_ms": 12.239
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "cover",
+			"start": "2026-11-09T05:30:04.484708738Z",
+			"wall_ms": 245.337836,
+			"cmd_real_ms": 244.627103,
+			"cmd_user_ms": 95.128,
+			"cmd_sys_ms": 26.129
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "cover",
+			"start": "2026-11-09T05:30:04.487560911Z",
+			"wall_ms": 232.061796,
+			"cmd_real_ms": 231.262052,
+			"cmd_user_ms": 92.458,
+			"cmd_sys_ms": 20.508
+		},
+		{
+			"package": "github.com/stretchr/testify/assert/yaml",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.226425258Z",
+			"wall_ms": 227.122117,
+			"cmd_real_ms": 200.519192,
+			"cmd_user_ms": 128.043,
+			"cmd_sys_ms": 20.04
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:05.176392442Z",
+			"wall_ms": 212.640025,
+			"cmd_real_ms": 210.570039,
+			"cmd_user_ms": 141.883,
+			"cmd_sys_ms": 27.659
+		},
+		{
+			"package": "github.com/klauspost/compress/huff0",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.347283084Z",
+			"wall_ms": 159.949992
+		},
+		{
+			"action_id": "DoJ7_xmQw5wW49EZZ1P8",
+			"package": "github.com/wow-look-at-my/ai-proxy/relay.test",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:05.69268425Z",
+			"wall_ms": 159.345299,
+			"cmd_real_ms": 151.036722,
+			"cmd_user_ms": 114.761,
+			"cmd_sys_ms": 47.58
+		},
+		{
+			"package": "github.com/klauspost/compress",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.938412999Z",
+			"wall_ms": 156.646166
+		},
+		{
+			"package": "github.com/klauspost/compress/zstd/internal/xxhash",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93860981Z",
+			"wall_ms": 156.500178
+		},
+		{
+			"package": "github.com/klauspost/compress/internal/le",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.9377111Z",
+			"wall_ms": 153.787489
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "cover",
+			"start": "2026-11-09T05:30:05.038869067Z",
+			"wall_ms": 143.51717,
+			"cmd_real_ms": 142.928708,
+			"cmd_user_ms": 121.411,
+			"cmd_sys_ms": 13.62
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay.test",
+			"mode": "cover",
+			"start": "2026-11-09T05:30:05.553903566Z",
+			"wall_ms": 138.750102,
+			"cmd_real_ms": 138.564967,
+			"cmd_user_ms": 88.99,
+			"cmd_sys_ms": 27.224
+		},
+		{
+			"package": "github.com/klauspost/compress/fse",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.213108827Z",
+			"wall_ms": 134.164685
+		},
+		{
+			"package": "github.com/pmezard/go-difflib/difflib",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.095063223Z",
+			"wall_ms": 131.324095
+		},
+		{
+			"package": "gopkg.in/yaml.v3",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.095111447Z",
+			"wall_ms": 131.312152
+		},
+		{
+			"package": "github.com/klauspost/compress/internal/snapref",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.226390004Z",
+			"wall_ms": 131.036785
+		},
+		{
+			"package": "github.com/klauspost/compress/internal/cpuinfo",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.937459791Z",
+			"wall_ms": 124.456916
+		},
+		{
+			"package": "github.com/davecgh/go-spew/spew",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.091506486Z",
+			"wall_ms": 121.595023
+		},
+		{
+			"package": "github.com/klauspost/compress/zstd",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:04.507240231Z",
+			"wall_ms": 118.993723
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "cover",
+			"start": "2026-11-09T05:30:04.061921827Z",
+			"wall_ms": 86.238209,
+			"cmd_real_ms": 85.571874,
+			"cmd_user_ms": 92.189,
+			"cmd_sys_ms": 8.463
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "test run",
+			"start": "2026-11-09T05:30:06.767743392Z",
+			"wall_ms": 84.947204
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "test run",
+			"start": "2026-11-09T05:30:06.767791004Z",
+			"wall_ms": 76.19975
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay.test",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:05.500069858Z",
+			"wall_ms": 53.826859
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "test clean",
+			"start": "2026-11-09T05:30:06.852705009Z",
+			"wall_ms": 6.874783
+		},
+		{
+			"package": "gopkg.in/yaml.v3",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.935297984Z",
+			"wall_ms": 5.20223
+		},
+		{
+			"package": "github.com/klauspost/compress/zstd",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.94061254Z",
+			"wall_ms": 5.197561
+		},
+		{
+			"package": "github.com/davecgh/go-spew/spew",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.935119734Z",
+			"wall_ms": 4.660099
+		},
+		{
+			"package": "github.com/stretchr/testify/assert",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.941914318Z",
+			"wall_ms": 4.628517
+		},
+		{
+			"package": "github.com/pmezard/go-difflib/difflib",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.935039794Z",
+			"wall_ms": 3.72385
+		},
+		{
+			"package": "github.com/klauspost/compress/internal/cpuinfo",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.933854732Z",
+			"wall_ms": 3.585451
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:04.484314334Z",
+			"wall_ms": 3.235926
+		},
+		{
+			"package": "github.com/klauspost/compress/internal/snapref",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.935591345Z",
+			"wall_ms": 3.213319
+		},
+		{
+			"package": "github.com/klauspost/compress/fse",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.935512761Z",
+			"wall_ms": 3.183099
+		},
+		{
+			"package": "github.com/klauspost/compress",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.935465014Z",
+			"wall_ms": 2.92939
+		},
+		{
+			"package": "github.com/klauspost/compress/zstd/internal/xxhash",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.935741993Z",
+			"wall_ms": 2.845891
+		},
+		{
+			"package": "github.com/klauspost/compress/internal/le",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.934942034Z",
+			"wall_ms": 2.744956
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "test clean",
+			"start": "2026-11-09T05:30:06.843999579Z",
+			"wall_ms": 1.846367
+		},
+		{
+			"package": "github.com/klauspost/compress/huff0",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.93871114Z",
+			"wall_ms": 1.831551
+		},
+		{
+			"package": "github.com/stretchr/testify/assert/yaml",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.940617024Z",
+			"wall_ms": 1.264735
+		},
+		{
+			"package": "github.com/stretchr/testify/require",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.946564121Z",
+			"wall_ms": 0.727745
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:04.484207221Z",
+			"wall_ms": 0.49564
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:03.945831019Z",
+			"wall_ms": 0.307712
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "build check cache",
+			"start": "2026-11-09T05:30:05.038604927Z",
+			"wall_ms": 0.2507
+		},
+		{
+			"mode": "write coverage meta-data file",
+			"start": "2026-11-09T05:30:05.038638995Z",
+			"wall_ms": 0.176707
+		},
+		{
+			"action_id": "XMSC1UTXBB2CX0jWXSQC",
+			"package": "gopkg.in/yaml.v3",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.940570445Z",
+			"wall_ms": 0.042641
+		},
+		{
+			"action_id": "Xehf6kYUqtGObFHMtPnG",
+			"package": "github.com/klauspost/compress/huff0",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.940579053Z",
+			"wall_ms": 0.022495
+		},
+		{
+			"action_id": "q3mI-tRnAiCvHzHX1n-s",
+			"package": "github.com/klauspost/compress/internal/le",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.937690884Z",
+			"wall_ms": 0.017715
+		},
+		{
+			"action_id": "-yW2kfL0qRhhohlCnjE2",
+			"package": "github.com/klauspost/compress/zstd/internal/xxhash",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.938591073Z",
+			"wall_ms": 0.016635
+		},
+		{
+			"action_id": "3jkx1YOltEbTwXlJOrk1",
+			"package": "github.com/davecgh/go-spew/spew",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.939783686Z",
+			"wall_ms": 0.014895
+		},
+		{
+			"action_id": "qMMJS80PSlK0iwSatcqY",
+			"package": "github.com/klauspost/compress/zstd",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.945814481Z",
+			"wall_ms": 0.013934
+		},
+		{
+			"action_id": "EVq3L7CWU6_kUOIVX61i",
+			"package": "github.com/klauspost/compress",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.938397387Z",
+			"wall_ms": 0.013749
+		},
+		{
+			"action_id": "vkEoDx3PbYBgFpjVqDk_",
+			"package": "github.com/klauspost/compress/internal/cpuinfo",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.937443976Z",
+			"wall_ms": 0.013669
+		},
+		{
+			"action_id": "pEogu7xs15YgIUu-KPg5",
+			"package": "github.com/pmezard/go-difflib/difflib",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.938766204Z",
+			"wall_ms": 0.01197
+		},
+		{
+			"action_id": "dSfV0DOPYJXpVe_g2RZq",
+			"package": "github.com/klauspost/compress/fse",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.938697884Z",
+			"wall_ms": 0.01106
+		},
+		{
+			"action_id": "sNulsFo2qPlaTfyQMQVV",
+			"package": "github.com/stretchr/testify/assert/yaml",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.941893261Z",
+			"wall_ms": 0.010707
+		},
+		{
+			"action_id": "ZJkopwGf2WZdfgSKDkr_",
+			"package": "github.com/stretchr/testify/require",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.947304391Z",
+			"wall_ms": 0.010317
+		},
+		{
+			"package": "net/url",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935331826Z",
+			"wall_ms": 0.008975
+		},
+		{
+			"action_id": "NylZ_DUh9dkAPam0U3vz",
+			"package": "github.com/stretchr/testify/assert",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.946545621Z",
+			"wall_ms": 0.00802
+		},
+		{
+			"action_id": "RviJGCXh8PTATz6XhTqy",
+			"package": "github.com/klauspost/compress/internal/snapref",
+			"mode": "build",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.938806938Z",
+			"wall_ms": 0.005946
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/relay",
+			"mode": "test print",
+			"start": "2026-11-09T05:30:06.859597934Z",
+			"wall_ms": 0.004424
+		},
+		{
+			"mode": "go test",
+			"start": "2026-11-09T05:30:06.859616074Z",
+			"wall_ms": 0.003062
+		},
+		{
+			"package": "github.com/wow-look-at-my/ai-proxy/zdelta",
+			"mode": "test print",
+			"start": "2026-11-09T05:30:06.859608641Z",
+			"wall_ms": 0.002555
+		},
+		{
+			"package": "log/slog/internal/buffer",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935581414Z",
+			"wall_ms": 0.000453
+		},
+		{
+			"package": "crypto/internal/sysrand",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935039628Z",
+			"wall_ms": 0.000452
+		},
+		{
+			"package": "internal/goarch",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934461281Z",
+			"wall_ms": 0.00044
+		},
+		{
+			"package": "unsafe",
+			"mode": "built-in package",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934464689Z",
+			"wall_ms": 0.000432
+		},
+		{
+			"package": "log/internal",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935342168Z",
+			"wall_ms": 0.000419
+		},
+		{
+			"mode": "nop",
+			"start": "2026-11-09T05:30:05.500067828Z",
+			"wall_ms": 0.000401
+		},
+		{
+			"mode": "test barrier",
+			"start": "2026-11-09T05:30:06.767789225Z",
+			"wall_ms": 0.000384
+		},
+		{
+			"package": "mime/quotedprintable",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93514216Z",
+			"wall_ms": 0.000382
+		},
+		{
+			"package": "internal/coverage/decodemeta",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935092501Z",
+			"wall_ms": 0.000372
+		},
+		{
+			"package": "log/slog",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935160568Z",
+			"wall_ms": 0.000371
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/internal/poly1305",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935122587Z",
+			"wall_ms": 0.000366
+		},
+		{
+			"package": "unsafe",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935163207Z",
+			"wall_ms": 0.000363
+		},
+		{
+			"package": "net/http/httputil",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935588065Z",
+			"wall_ms": 0.000361
+		},
+		{
+			"package": "compress/flate",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935075054Z",
+			"wall_ms": 0.000359
+		},
+		{
+			"package": "crypto/internal/fips140/edwards25519/field",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935102818Z",
+			"wall_ms": 0.000358
+		},
+		{
+			"package": "net/http",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935410822Z",
+			"wall_ms": 0.000354
+		},
+		{
+			"package": "encoding/binary",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935046298Z",
+			"wall_ms": 0.000347
+		},
+		{
+			"mode": "test barrier",
+			"start": "2026-11-09T05:30:06.767734422Z",
+			"wall_ms": 0.000345
+		},
+		{
+			"package": "log/slog/internal/buffer",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935159286Z",
+			"wall_ms": 0.000345
+		},
+		{
+			"package": "encoding/base32",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935056466Z",
+			"wall_ms": 0.000344
+		},
+		{
+			"package": "crypto/fips140",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935041676Z",
+			"wall_ms": 0.000327
+		},
+		{
+			"package": "internal/bytealg",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93491531Z",
+			"wall_ms": 0.000325
+		},
+		{
+			"package": "internal/abi",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934910412Z",
+			"wall_ms": 0.000322
+		},
+		{
+			"package": "crypto/sha3",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935111467Z",
+			"wall_ms": 0.000322
+		},
+		{
+			"package": "internal/saferio",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93511356Z",
+			"wall_ms": 0.000321
+		},
+		{
+			"package": "encoding/json/internal",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935050412Z",
+			"wall_ms": 0.000319
+		},
+		{
+			"package": "crypto/internal/fips140/edwards25519",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935118219Z",
+			"wall_ms": 0.000319
+		},
+		{
+			"package": "crypto/internal/fips140deps/cpu",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935021301Z",
+			"wall_ms": 0.000318
+		},
+		{
+			"package": "crypto/internal/fips140/check",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935031607Z",
+			"wall_ms": 0.000318
+		},
+		{
+			"package": "internal/godebugs",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93492063Z",
+			"wall_ms": 0.000317
+		},
+		{
+			"package": "crypto/hkdf",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935391667Z",
+			"wall_ms": 0.000314
+		},
+		{
+			"package": "vendor/golang.org/x/text/secure/bidirule",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935148199Z",
+			"wall_ms": 0.000314
+		},
+		{
+			"package": "internal/runtime/maps",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934939751Z",
+			"wall_ms": 0.000313
+		},
+		{
+			"package": "encoding/json/internal/jsonopts",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935053522Z",
+			"wall_ms": 0.000313
+		},
+		{
+			"package": "internal/strconv",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935191768Z",
+			"wall_ms": 0.000313
+		},
+		{
+			"package": "internal/profilerecord",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934924683Z",
+			"wall_ms": 0.000312
+		},
+		{
+			"package": "internal/unsafeheader",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934912524Z",
+			"wall_ms": 0.00031
+		},
+		{
+			"package": "crypto/internal/entropy/v1.0.0",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935414628Z",
+			"wall_ms": 0.000309
+		},
+		{
+			"package": "crypto/aes",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935380701Z",
+			"wall_ms": 0.000308
+		},
+		{
+			"package": "io/fs",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934981326Z",
+			"wall_ms": 0.000307
+		},
+		{
+			"package": "unicode/utf16",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93497588Z",
+			"wall_ms": 0.000307
+		},
+		{
+			"package": "hash",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935014801Z",
+			"wall_ms": 0.000306
+		},
+		{
+			"package": "internal/oserror",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93497429Z",
+			"wall_ms": 0.000306
+		},
+		{
+			"package": "vendor/golang.org/x/text/unicode/bidi",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935147036Z",
+			"wall_ms": 0.000306
+		},
+		{
+			"package": "log/slog",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935586221Z",
+			"wall_ms": 0.000306
+		},
+		{
+			"package": "errors",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934949414Z",
+			"wall_ms": 0.000305
+		},
+		{
+			"package": "internal/runtime/gc/scan",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934935188Z",
+			"wall_ms": 0.000305
+		},
+		{
+			"package": "crypto/internal/fips140/nistec",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935101935Z",
+			"wall_ms": 0.000305
+		},
+		{
+			"package": "crypto/ed25519",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935390902Z",
+			"wall_ms": 0.000304
+		},
+		{
+			"package": "internal/filepathlite",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934982506Z",
+			"wall_ms": 0.000303
+		},
+		{
+			"package": "internal/coverage",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935082198Z",
+			"wall_ms": 0.000303
+		},
+		{
+			"package": "crypto/internal/fips140/nistec",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935299496Z",
+			"wall_ms": 0.000303
+		},
+		{
+			"package": "encoding/hex",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935058824Z",
+			"wall_ms": 0.000302
+		},
+		{
+			"package": "math",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93495424Z",
+			"wall_ms": 0.000302
+		},
+		{
+			"package": "internal/strconv",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934930118Z",
+			"wall_ms": 0.000301
+		},
+		{
+			"package": "net/http/httptrace",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935456084Z",
+			"wall_ms": 0.000301
+		},
+		{
+			"package": "internal/byteorder",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934916849Z",
+			"wall_ms": 0.0003
+		},
+		{
+			"package": "os/signal",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935070102Z",
+			"wall_ms": 0.000299
+		},
+		{
+			"package": "crypto/internal/boring/sig",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935044748Z",
+			"wall_ms": 0.000299
+		},
+		{
+			"package": "internal/chacha8rand",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934918897Z",
+			"wall_ms": 0.000298
+		},
+		{
+			"package": "internal/fmtsort",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934969686Z",
+			"wall_ms": 0.000296
+		},
+		{
+			"package": "internal/race",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934937681Z",
+			"wall_ms": 0.000295
+		},
+		{
+			"package": "path",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934975064Z",
+			"wall_ms": 0.000295
+		},
+		{
+			"package": "encoding",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934995014Z",
+			"wall_ms": 0.000295
+		},
+		{
+			"package": "internal/abi",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935169762Z",
+			"wall_ms": 0.000295
+		},
+		{
+			"package": "hash/crc32",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935269185Z",
+			"wall_ms": 0.000295
+		},
+		{
+			"package": "bytes",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934990922Z",
+			"wall_ms": 0.000294
+		},
+		{
+			"package": "sync/atomic",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934959112Z",
+			"wall_ms": 0.000294
+		},
+		{
+			"package": "cmp",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934951406Z",
+			"wall_ms": 0.000293
+		},
+		{
+			"package": "internal/runtime/exithook",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934932301Z",
+			"wall_ms": 0.000293
+		},
+		{
+			"package": "internal/cpu",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934913491Z",
+			"wall_ms": 0.000293
+		},
+		{
+			"package": "internal/trace/tracev2",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934944469Z",
+			"wall_ms": 0.000293
+		},
+		{
+			"package": "internal/msan",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934936787Z",
+			"wall_ms": 0.000293
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/internal/alias",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935316801Z",
+			"wall_ms": 0.000293
+		},
+		{
+			"package": "runtime",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934946048Z",
+			"wall_ms": 0.000292
+		},
+		{
+			"package": "runtime/trace",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935012872Z",
+			"wall_ms": 0.000292
+		},
+		{
+			"package": "net/textproto",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935143072Z",
+			"wall_ms": 0.000292
+		},
+		{
+			"package": "internal/sync",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934960426Z",
+			"wall_ms": 0.000292
+		},
+		{
+			"package": "internal/unsafeheader",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935171741Z",
+			"wall_ms": 0.000292
+		},
+		{
+			"package": "context",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934992882Z",
+			"wall_ms": 0.000291
+		},
+		{
+			"package": "crypto/elliptic",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935107487Z",
+			"wall_ms": 0.000291
+		},
+		{
+			"package": "crypto/internal/fips140/alias",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935019615Z",
+			"wall_ms": 0.000291
+		},
+		{
+			"package": "crypto/internal/fips140cache",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935110677Z",
+			"wall_ms": 0.000291
+		},
+		{
+			"package": "internal/byteorder",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93517525Z",
+			"wall_ms": 0.000291
+		},
+		{
+			"package": "io",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93497055Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "time",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934979597Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "internal/runtime/cgroup",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934931413Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "compress/gzip",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935077718Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "net/http/internal",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935143969Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "internal/reflectlite",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934948124Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "crypto/internal/fips140/sha256",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935023694Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "crypto/internal/fips140/tls13",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935125029Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "weak",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935109096Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "vendor/golang.org/x/net/http2/hpack",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935152806Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "internal/gate",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935155208Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "crypto/internal/constanttime",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935024579Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "crypto/internal/fips140/sha3",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935027971Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "crypto/internal/fips140deps/time",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935036292Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "net/http",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93546001Z",
+			"wall_ms": 0.00029
+		},
+		{
+			"package": "fmt",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934988902Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "net/url",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935137489Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "path/filepath",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935009658Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "math/bits",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934927992Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "internal/syscall/execenv",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934985229Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "math/rand",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935008397Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "runtime/debug",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93501199Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "hash/fnv",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93508123Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "internal/runtime/syscall/linux",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934942684Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "mime",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93514132Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "vendor/golang.org/x/net/http/httpproxy",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935154386Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "log/internal",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935138442Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "crypto",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935016847Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "vendor/golang.org/x/text/unicode/norm",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935149054Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "crypto/internal/fips140/drbg",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93536521Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "go/scanner",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935064973Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "crypto/sha256",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935442475Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "context",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935271919Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "slices",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93523195Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "internal/goarch",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935161398Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "unicode/utf16",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935235512Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "crypto/internal/fips140only",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935420639Z",
+			"wall_ms": 0.000289
+		},
+		{
+			"package": "testing",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935014046Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "net/http/httptest",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935412356Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "strings",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934996405Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "internal/syscall/unix",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934983312Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "internal/runtime/math",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934938574Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "internal/runtime/syscall/cosmo",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934927181Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "net/http/internal/testcert",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935157151Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "encoding/json/v2",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935060064Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "net/netip",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935129438Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "hash/crc32",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935076072Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "internal/ape",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935078466Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "crypto/tls/internal/fips140tls",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935125805Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "vendor/golang.org/x/net/dns/dnsmessage",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935134873Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "crypto/internal/fips140only",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935370079Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "crypto/internal/fips140/mldsa",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935398493Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "crypto/internal/fips140/bigmod",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935108233Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "internal/chacha8rand",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935176846Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "crypto/des",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935428894Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "crypto/rc4",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935448573Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "crypto/sha512",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93543455Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "net/http/internal/httpcommon",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935457391Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "internal/gate",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935357233Z",
+			"wall_ms": 0.000288
+		},
+		{
+			"package": "encoding/json",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935061163Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "container/list",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935099299Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "unicode/utf8",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934956147Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "internal/coverage/rtcov",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934919768Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "internal/asan",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934935953Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/cipher",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935372264Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/rc4",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935400251Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/sha512",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935386954Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/subtle",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935043544Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/cryptobyte/asn1",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935115904Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "unique",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935128227Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/fips140deps/byteorder",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935020529Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/impl",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935022076Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/fips140deps/godebug",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935017684Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/fips140/rsa",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935400951Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/randutil",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935105416Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "net/http/internal/http2",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935458634Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "sync/atomic",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935209919Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "runtime/trace",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935361203Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "encoding",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935226916Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "log/slog/internal",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93546346Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/boring",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935424781Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/hkdf",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93543924Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/fips140/drbg",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935416224Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/rand",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935430413Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/fips140/mldsa",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935446736Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "crypto/internal/fips140/mlkem",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935440704Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/chacha20",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935443226Z",
+			"wall_ms": 0.000287
+		},
+		{
+			"package": "os",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93498717Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "slices",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934967709Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "unicode",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934965335Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "internal/fuzz",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935378888Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "internal/runtime/gc",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934933223Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "encoding/json/internal/jsonwire",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935054442Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "encoding/json/jsontext",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935055536Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "log/slog/internal",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935157899Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "crypto/internal/boring",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935374327Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "crypto/sha1",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935402704Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "encoding/pem",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935127414Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "internal/singleflight",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93513407Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "crypto/dsa",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93540343Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "crypto/x509/pkix",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935126613Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "crypto/internal/fips140hash",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93511267Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "iter",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935217198Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "encoding/json/v2",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935262084Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "internal/goexperiment",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935179395Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "encoding/binary",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935241928Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "regexp/syntax",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935264974Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "crypto/internal/fips140/bigmod",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935306024Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "crypto/internal/constanttime",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935283114Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "crypto/internal/fips140deps/time",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935293322Z",
+			"wall_ms": 0.000286
+		},
+		{
+			"package": "sort",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935063159Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/goos",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93492313Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "syscall",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934977536Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/goexperiment",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934921933Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/runtime/sys",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93493401Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "flag",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935001569Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/sysinfo",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935004986Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/coverage/calloc",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935083784Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/runtime/pprof/label",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934940699Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "maps",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935085385Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "math/rand/v2",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935104202Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "vendor/golang.org/x/net/http/httpguts",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935151868Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/nettest",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935156337Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "encoding/json/internal/jsonflags",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935051867Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "text/tabwriter",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935079234Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/coverage/uleb128",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935088656Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "crypto/internal/fips140/tls12",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935124262Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "crypto/rsa",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935401988Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/netconf",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935131369Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/routebsd",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935133274Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "net/http/internal/httpsfv",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935153587Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "math/big",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935106239Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "crypto/internal/boring/bbig",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935385497Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "crypto/internal/fips140/ecdsa",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935386255Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "crypto/internal/entropy/v1.0.0",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935037545Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "bufio",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935225082Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "bytes",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935221603Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "net/http/httptest",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935462236Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "testing",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935362314Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "time",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935247336Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "strconv",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935233506Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "strings",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935222821Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "container/list",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935271076Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "encoding/hex",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935260947Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/bytealg",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935174037Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "reflect",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935240437Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "runtime/debug",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935360489Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "compress/gzip",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935270307Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "io/fs",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935249316Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/reflectlite",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935206664Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/fmtsort",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935242666Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "crypto/internal/fips140/aes/gcm",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935419811Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "crypto/sha1",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935451171Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "internal/netconf",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935326794Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "encoding/base32",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935238508Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "crypto/internal/boring/bbig",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935433108Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "crypto/internal/fips140/nistec/fiat",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935298275Z",
+			"wall_ms": 0.000285
+		},
+		{
+			"package": "runtime/coverage",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935098444Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "sync",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934962377Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "net/http/httputil",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935413102Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "strconv",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93495807Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/poll",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934984439Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "iter",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934952671Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/coverage/cformat",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935087004Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/coverage/encodemeta",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935095318Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/coverage/pods",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935096144Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/runtime/atomic",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934925908Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "net",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93513609Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/rand",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935389473Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "go/token",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935062089Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/coverage/slicewriter",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935093315Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/des",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935381478Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/ecdh",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935382223Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/subtle",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93502635Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/sha512",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935029355Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/internal/alias",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93512178Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "vendor/golang.org/x/text/transform",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935145606Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/nistec/fiat",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.9351006Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "io",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935215568Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "sync",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93521289Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "fmt",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935257624Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "unicode",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935218422Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "math",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935230784Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "regexp",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935266063Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "compress/flate",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935266824Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "encoding/base64",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935239287Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "path",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935244701Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/sync",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935211062Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/stringslite",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935202742Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "encoding/json/internal",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935227671Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "encoding/json/internal/jsonwire",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93523672Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/syscall/unix",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935251195Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/sha256",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935282402Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "hash",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935267626Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/cpu",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935172544Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/runtime/math",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935199431Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/runtime/pprof/label",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935201307Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/runtime/syscall/cosmo",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935183194Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/trace/tracev2",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935203495Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/aes",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935428057Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/cipher",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935422981Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/ecdsa",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935435615Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/fips140",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935294914Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/tls12",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935319059Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/routebsd",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935328229Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "internal/singleflight",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935328926Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/dsa",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935451881Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/boring/sig",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935297508Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935277842Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/impl",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935280854Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/alias",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935278584Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/ecdh",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935429676Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/edwards25519/field",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935300256Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/hkdf",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935315614Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140deps/godebug",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935276698Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/internal/poly1305",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935317541Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "vendor/golang.org/x/sys/cpu",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935318297Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/randutil",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935302448Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "crypto/internal/fips140/edwards25519",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93531491Z",
+			"wall_ms": 0.000284
+		},
+		{
+			"package": "reflect",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934966831Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "bufio",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935002353Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/sha256",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935377717Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/testlog",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934985997Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "regexp",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935072481Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/coverage/cmerge",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935084511Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "encoding/base64",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935057464Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "log",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935140087Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "mime/multipart",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935406789Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "vendor/golang.org/x/net/idna",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93515031Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "regexp/syntax",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935071058Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/ecdh",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935384763Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/hmac",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935392416Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/fips140/aes",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935035171Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "net/http/internal/httpcommon",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935408684Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "go/build/constraint",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935067288Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/fips140/hkdf",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935120266Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/fips140/hmac",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935030484Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/fips140/mlkem",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935393168Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "encoding/json",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935263159Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "errors",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935207821Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "sort",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935263887Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "math/bits",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935183912Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "unicode/utf8",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935219246Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/godebug",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935275236Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "maps",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935322775Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "math/rand/v2",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93530139Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "net",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.9353307Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "vendor/golang.org/x/net/http/httpproxy",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935355829Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/race",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935198724Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/runtime/atomic",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935182052Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "cmp",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935225811Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/sysinfo",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935359791Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "syscall",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935245486Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "encoding/json/internal/jsonflags",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935228851Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "encoding/json/internal/jsonopts",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935229947Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "net/netip",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935325028Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935273421Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/rand",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935437051Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/runtime/sys",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935195279Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/coverage/rtcov",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935177658Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/hmac",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935439984Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/fips140/tls13",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935319834Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/cryptobyte",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935314173Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/oserror",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935243412Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "net/http/internal/httpsfv",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935355128Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "vendor/golang.org/x/text/unicode/bidi",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935349404Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "encoding/asn1",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935311995Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/cryptobyte/asn1",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935313105Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/asan",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935197223Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/fips140deps/byteorder",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935279327Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/fips140hash",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935310098Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/sha3",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935308955Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/fips140/rsa",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935449287Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/sysrand",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935294105Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "crypto/internal/fips140/sha3",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935285887Z",
+			"wall_ms": 0.000283
+		},
+		{
+			"package": "internal/coverage/cfile",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935097296Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/stringslite",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934943551Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "net/http/httptrace",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935407521Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "net/http/internal/http2",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935409724Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/synctest",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.934961249Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "os/exec",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935069291Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/ecdsa",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935388007Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/mldsa",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935399536Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/cryptobyte",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935117407Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/bisect",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935005782Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/nettrace",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935132108Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/fips140",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935018869Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/rand",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935382938Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/fips140/ed25519",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935388744Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/tls",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935454048Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "log",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935343434Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "mime",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935344495Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "net/http/internal",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935346631Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/x509",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935452949Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/nettest",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935358368Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "net/http/internal/testcert",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.9353591Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "math/rand",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935303162Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/poll",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935252342Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/syscall/execenv",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935253067Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/runtime/gc/scan",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935196484Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/ecdh",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935432341Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/ed25519",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93543852Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/elliptic",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935305304Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/hpke",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935445308Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/fips140/aes",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935292571Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/tls/internal/fips140tls",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935320582Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "encoding/pem",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935321991Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "weak",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935306753Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/bisect",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935274151Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "mime/quotedprintable",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935345212Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "internal/nettrace",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935327504Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "vendor/golang.org/x/text/unicode/norm",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935351141Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "math/big",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935304256Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "unique",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935323962Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/fips140deps/cpu",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93528013Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/fips140/ecdsa",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935433838Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/fips140/ed25519",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935436348Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/fips140/check",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935289178Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/fips140/hmac",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935288102Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "crypto/internal/fips140/subtle",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935284357Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "vendor/golang.org/x/text/transform",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935348334Z",
+			"wall_ms": 0.000282
+		},
+		{
+			"package": "net/http/internal/ascii",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935144742Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "go/parser",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935068589Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "internal/coverage/slicereader",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.93508787Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "internal/coverage/stringtab",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935089793Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "crypto/hpke",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935397038Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "crypto/md5",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935397772Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "encoding/asn1",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935114783Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/chacha20",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935394966Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "vendor/golang.org/x/sys/cpu",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935123473Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "os",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935254968Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "path/filepath",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935341451Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "net/http/internal/ascii",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93534759Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "internal/synctest",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935211835Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "encoding/json/jsontext",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935237787Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "internal/filepathlite",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93525047Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "internal/profilerecord",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935181297Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "internal/runtime/cgroup",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935193016Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "crypto/mldsa",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935447859Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "crypto/subtle",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935296061Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "vendor/golang.org/x/net/dns/dnsmessage",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935329637Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "vendor/golang.org/x/net/http2/hpack",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93535441Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "crypto/internal/fips140cache",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.93530823Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "internal/saferio",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935310821Z",
+			"wall_ms": 0.000281
+		},
+		{
+			"package": "testing/internal/testdeps",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935379968Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "runtime/pprof",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935080459Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "go/ast",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935066387Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "crypto/internal/fips140/aes/gcm",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935369275Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "crypto/mlkem",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935394239Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "net/textproto",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935345928Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "vendor/golang.org/x/net/http/httpguts",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935353696Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "internal/testlog",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935253788Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "internal/goos",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935180104Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "crypto/md5",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935446018Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "crypto/mlkem",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935441764Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "crypto/x509/pkix",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935321291Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "crypto/internal/fips140/sha512",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935287023Z",
+			"wall_ms": 0.00028
+		},
+		{
+			"package": "internal/coverage/decodecounter",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935091766Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "internal/coverage/encodecounter",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935094573Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "internal/godebug",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935006891Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "crypto/x509",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935404475Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/chacha20poly1305",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935396002Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "mime/multipart",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935455194Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "flag",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935356539Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "internal/runtime/maps",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935200548Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "internal/godebugs",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935178427Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "internal/runtime/syscall/linux",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935202022Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "crypto/rsa",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935450461Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "vendor/golang.org/x/text/secure/bidirule",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935350448Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "internal/msan",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935198007Z",
+			"wall_ms": 0.000279
+		},
+		{
+			"package": "crypto/tls",
+			"mode": "embedded std",
+			"need_build": true,
+			"start": "2026-11-09T05:30:03.935405581Z",
+			"wall_ms": 0.000278
+		},
+		{
+			"package": "runtime",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935204612Z",
+			"wall_ms": 0.000278
+		},
+		{
+			"package": "internal/runtime/exithook",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935193741Z",
+			"wall_ms": 0.000278
+		},
+		{
+			"package": "internal/runtime/gc",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935194468Z",
+			"wall_ms": 0.000278
+		},
+		{
+			"package": "vendor/golang.org/x/crypto/chacha20poly1305",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935444276Z",
+			"wall_ms": 0.000278
+		},
+		{
+			"package": "vendor/golang.org/x/net/idna",
+			"mode": "vet",
+			"start": "2026-11-09T05:30:03.935352217Z",
+			"wall_ms": 0.000276
+		}
+	]
+}

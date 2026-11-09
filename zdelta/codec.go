@@ -30,8 +30,8 @@ func Decode(body, base []byte, maxSize int64) ([]byte, error) {
 	opts := []zstd.DOption{
 		zstd.WithDecoderConcurrency(1),
 		zstd.WithDecoderMaxMemory(uint64(maxSize)),
-		// The decoder takes no window under zstd's minimum; MaxMemory still caps the output.
-		zstd.WithDecoderMaxWindow(uint64(max(maxSize, zstd.MinWindowSize))),
+		// A delta frame's window spans the base and the body, so it may reach twice maxSize.
+		zstd.WithDecoderMaxWindow(uint64(max(2*maxSize, zstd.MinWindowSize))),
 	}
 	if base != nil {
 		opts = append(opts, zstd.WithDecoderDictRaw(0, base))

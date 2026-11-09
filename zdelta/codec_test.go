@@ -70,6 +70,17 @@ func TestDecodeEnforcesTheSizeLimit(t *testing.T) {
 	assert.ErrorIs(t, err, ErrTooLarge)
 }
 
+// A delta's window spans base and body, so it is larger than the body limit
+// even when the body itself fits.
+func TestDeltaWindowMayExceedTheBodyLimit(t *testing.T) {
+	base, next := fixture(t, "base.json"), fixture(t, "next.json")
+	limit := int64(len(next))
+
+	got, err := Decode(fixture(t, "next.json.patch.zst"), base, limit)
+	require.NoError(t, err)
+	assert.Equal(t, next, got)
+}
+
 func TestWindowFor(t *testing.T) {
 	assert.Equal(t, 1024, windowFor(1))
 	assert.Equal(t, 1<<18, windowFor(1<<18))

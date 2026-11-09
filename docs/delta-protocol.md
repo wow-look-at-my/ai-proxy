@@ -24,6 +24,7 @@ X-Zstd-Base: <sha256 hex>       # the body this one was encoded against
 - The body is one zstd frame. With `X-Zstd-Base` it is encoded with the base body as a raw dictionary. In libzstd that is `ZSTD_CCtx_refPrefix` or `zstd --patch-from=<base>`. In Go it is `zdelta.Encode(next, base)`.
 - The hash is SHA-256 of the plain base bytes, lowercase hex.
 - The window must cover the base plus the new body. libzstd sets it for `--patch-from`. A raw libzstd client sets `ZSTD_c_windowLog` itself and turns on long-distance matching for bodies over a few MiB.
+- The relay accepts a window up to twice `--max-body-mib`. A client skips the delta when the base plus the body is larger, and sends a full frame.
 
 ## The relay's answer to an unknown base
 

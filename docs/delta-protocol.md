@@ -37,6 +37,10 @@ X-Zstd-Base-Missing: 1
 
 The relay keeps bases in a byte-bounded LRU in memory, so a restart or eviction loses them. The client sends the same request again without `X-Zstd-Base`, still zstd-compressed. Nothing reaches the upstream on a 409.
 
+## Who can use a base
+
+A base belongs to the route and the upstream credential of the request that stored it. A request with another credential gets the same 409 as for a base that never existed, even when it names the right hash. Without this, a caller who learned a hash can send a delta that copies another caller's history to the upstream under its own key. Callers that send no credential at all share one scope.
+
 ## Limits
 
 `--max-body-mib` caps the encoded body and the decoded body. A frame that decodes past it gets a 413.

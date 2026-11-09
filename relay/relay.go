@@ -4,6 +4,8 @@ package relay
 
 import (
 	"bytes"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -120,7 +122,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusNotFound, "relay_no_route", "no route for "+r.URL.Path)
 		return
 	}
-	if err := h.decodeBody(w, r); err != nil {
+	if err := h.decodeBody(w, r, storeScope(rt, r.Header)); err != nil {
 		return
 	}
 	r.Header.Del(zdelta.DeltaHeader)
@@ -136,9 +138,26 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.proxy.ServeHTTP(w, out)
 }
 
+// credentialHeaders carry the upstream API key in the dialects the relay serves.
+var credentialHeaders = []string{"Authorization", "X-Api-Key", "X-Goog-Api-Key", "Api-Key"}
+
+// storeScope binds a stored body to the route and the upstream credential of
+// the request that sent it. A base hash alone is not enough to use the body. A
+// caller with another key could otherwise send a delta that copies the body out
+// to its own upstream account.
+func storeScope(rt Route, header http.Header) string {
+	sum := sha256.New()
+	sum.Write([]byte(rt.Prefix))
+	for _, name := range credentialHeaders {
+		sum.Write([]byte{0})
+		sum.Write([]byte(header.Get(name)))
+	}
+	return hex.EncodeToString(sum.Sum(nil))
+}
+
 // decodeBody replaces a zstd body with the plain bytes it encodes. It writes
 // the error response itself and returns non-nil when the request must stop.
-func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request) error {
+func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request, scope string) error {
 	if r.Body == nil || r.Body == http.NoBody {
 		return nil
 	}
@@ -160,7 +179,7 @@ func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request) error {
 		if baseHash != "" {
 			var found bool
 			if h.cfg.Store != nil {
-				base, found = h.cfg.Store.Get(baseHash)
+				base, found = h.cfg.Store.Get(scope, baseHash)
 			}
 			if !found {
 				w.Header().Set(zdelta.BaseMissingHeader, "1")
@@ -184,7 +203,7 @@ func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request) error {
 		return errors.New("base without zstd")
 	}
 	if keep {
-		h.cfg.Store.Put(plain)
+		h.cfg.Store.Put(scope, plain)
 	}
 	r.Body = io.NopCloser(bytes.NewReader(plain))
 	r.ContentLength = int64(len(plain))

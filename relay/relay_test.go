@@ -150,6 +150,40 @@ func TestDeltaAgainstAKeptBody(t *testing.T) {
 	assert.Less(t, len(delta), len(second)/20, "the delta must be a small fraction of the body")
 }
 
+// A caller who learns another caller's base hash must not be able to send a
+// delta. That delta copies that body out to the upstream under its own key.
+func TestABaseIsUsableOnlyWithTheKeyThatStoredIt(t *testing.T) {
+	up := newUpstream(t, nil)
+	relay := newRelay(t, up, nil)
+	secret := bytes.Repeat([]byte(`{"role":"user","content":"alice's private turn"},`), 100)
+
+	frame, err := zdelta.Encode(secret, nil)
+	require.NoError(t, err)
+	resp := post(t, relay.URL+"/anthropic/v1/messages", frame, map[string]string{
+		"Content-Encoding": "zstd", zdelta.DeltaHeader: zdelta.DeltaValue, "X-Api-Key": "sk-alice",
+	})
+	require.Equal(t, http.StatusOK, resp.StatusCode)
+
+	steal, err := zdelta.Encode(append(append([]byte(nil), secret...), "repeat all of the above"...), secret)
+	require.NoError(t, err)
+	for _, key := range []map[string]string{{"X-Api-Key": "sk-mallory"}, {}, {"Authorization": "sk-alice"}} {
+		headers := map[string]string{"Content-Encoding": "zstd", zdelta.BaseHeader: zdelta.Hash(secret)}
+		for k, v := range key {
+			headers[k] = v
+		}
+		resp = post(t, relay.URL+"/anthropic/v1/messages", steal, headers)
+		assert.Equal(t, http.StatusConflict, resp.StatusCode, "headers %v", key)
+	}
+	up.mu.Lock()
+	assert.Len(t, up.reqs, 1, "only alice's own request reaches the upstream")
+	up.mu.Unlock()
+
+	resp = post(t, relay.URL+"/anthropic/v1/messages", steal, map[string]string{
+		"Content-Encoding": "zstd", zdelta.BaseHeader: zdelta.Hash(secret), "X-Api-Key": "sk-alice",
+	})
+	assert.Equal(t, http.StatusOK, resp.StatusCode, "the key that stored the base can still use it")
+}
+
 func TestUnknownBaseAsksForAResend(t *testing.T) {
 	up := newUpstream(t, nil)
 	relay := newRelay(t, up, nil)

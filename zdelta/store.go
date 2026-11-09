@@ -16,8 +16,8 @@ func Hash(body []byte) string {
 	return hex.EncodeToString(sum[:])
 }
 
-// Store keeps recent bodies by hash, least recently used first out, within
-// a total byte budget.
+// Store keeps recent bodies by scope and hash, least recently used first out,
+// within a total byte budget.
 type Store struct {
 	mu       sync.Mutex
 	maxBytes int64
@@ -27,8 +27,12 @@ type Store struct {
 }
 
 type entry struct {
-	hash string
+	key  string
 	body []byte
+}
+
+func scopedKey(scope, hash string) string {
+	return scope + "\x00" + hash
 }
 
 // NewStore returns a store that holds at most maxBytes of bodies.
@@ -36,36 +40,37 @@ func NewStore(maxBytes int64) *Store {
 	return &Store{maxBytes: maxBytes, order: list.New(), byHash: map[string]*list.Element{}}
 }
 
-// Put keeps body under its hash and returns the hash. A body larger than the
-// whole budget is not kept.
-func (s *Store) Put(body []byte) string {
+// Put keeps body under scope and its hash, and returns the hash. A body larger
+// than the whole budget is not kept.
+func (s *Store) Put(scope string, body []byte) string {
 	hash := Hash(body)
+	key := scopedKey(scope, hash)
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	if el, ok := s.byHash[hash]; ok {
+	if el, ok := s.byHash[key]; ok {
 		s.order.MoveToFront(el)
 		return hash
 	}
 	if int64(len(body)) > s.maxBytes {
 		return hash
 	}
-	s.byHash[hash] = s.order.PushFront(&entry{hash: hash, body: body})
+	s.byHash[key] = s.order.PushFront(&entry{key: key, body: body})
 	s.size += int64(len(body))
 	for s.size > s.maxBytes {
 		oldest := s.order.Back()
 		e := oldest.Value.(*entry)
 		s.order.Remove(oldest)
-		delete(s.byHash, e.hash)
+		delete(s.byHash, e.key)
 		s.size -= int64(len(e.body))
 	}
 	return hash
 }
 
-// Get returns the body kept under hash. The caller must not change it.
-func (s *Store) Get(hash string) ([]byte, bool) {
+// Get returns the body that scope put under hash. The caller must not change it.
+func (s *Store) Get(scope, hash string) ([]byte, bool) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	el, ok := s.byHash[hash]
+	el, ok := s.byHash[scopedKey(scope, hash)]
 	if !ok {
 		return nil, false
 	}

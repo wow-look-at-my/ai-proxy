@@ -133,14 +133,14 @@ func TestDeltaAgainstAKeptBody(t *testing.T) {
 	frame, err := zdelta.Encode(first, nil)
 	require.NoError(t, err)
 	resp := post(t, relay.URL+"/anthropic/v1/messages", frame, map[string]string{
-		"Content-Encoding": "zstd", zdelta.DeltaHeader: zdelta.DeltaValue,
+		"Content-Encoding": "zstd", zdelta.DeltaHeader: zdelta.DeltaValue, "X-Api-Key": "sk-test",
 	})
 	require.Equal(t, http.StatusOK, resp.StatusCode)
 
 	delta, err := zdelta.Encode(second, first)
 	require.NoError(t, err)
 	resp = post(t, relay.URL+"/anthropic/v1/messages", delta, map[string]string{
-		"Content-Encoding": "zstd", zdelta.DeltaHeader: zdelta.DeltaValue, zdelta.BaseHeader: zdelta.Hash(first),
+		"Content-Encoding": "zstd", zdelta.DeltaHeader: zdelta.DeltaValue, zdelta.BaseHeader: zdelta.Hash(first), "X-Api-Key": "sk-test",
 	})
 	require.Equal(t, http.StatusOK, resp.StatusCode)
 	got := up.last(t)
@@ -182,6 +182,30 @@ func TestABaseIsUsableOnlyWithTheKeyThatStoredIt(t *testing.T) {
 		"Content-Encoding": "zstd", zdelta.BaseHeader: zdelta.Hash(secret), "X-Api-Key": "sk-alice",
 	})
 	assert.Equal(t, http.StatusOK, resp.StatusCode, "the key that stored the base can still use it")
+}
+
+// A request with no API key gets plain zstd only: no delta advertisement.
+// This also covers no kept body, and no base, so keyless callers never share
+// a store scope.
+func TestDeltasNeedAnAPIKey(t *testing.T) {
+	up := newUpstream(t, nil)
+	cfgStore := zdelta.NewStore(1 << 22)
+	relay := newRelay(t, up, func(c *Config) { c.Store = cfgStore })
+	body := bytes.Repeat([]byte(`{"role":"user","content":"local"},`), 100)
+	frame, err := zdelta.Encode(body, nil)
+	require.NoError(t, err)
+
+	resp := post(t, relay.URL+"/anthropic/v1/messages", frame, map[string]string{
+		"Content-Encoding": "zstd", zdelta.DeltaHeader: zdelta.DeltaValue,
+	})
+	require.Equal(t, http.StatusOK, resp.StatusCode)
+	assert.Equal(t, body, up.last(t).body, "plain zstd still decodes")
+	assert.Equal(t, "zstd", resp.Header.Get("Accept-Encoding"))
+	assert.Empty(t, resp.Header.Get(zdelta.DeltaHeader), "no delta advertisement without a key")
+	assert.Equal(t, 0, cfgStore.Len(), "nothing is kept without a key")
+
+	resp = post(t, relay.URL+"/anthropic/v1/messages", frame, map[string]string{"Authorization": "Bearer sk-test"})
+	assert.Equal(t, zdelta.DeltaValue, resp.Header.Get(zdelta.DeltaHeader), "a keyed request sees the advertisement")
 }
 
 func TestUnknownBaseAsksForAResend(t *testing.T) {

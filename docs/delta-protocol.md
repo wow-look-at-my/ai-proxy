@@ -11,7 +11,7 @@ Accept-Encoding: zstd
 X-Zstd-Delta: sha256
 ```
 
-`X-Zstd-Delta` is absent when the relay runs with `--delta-cache-mib 0`.
+`X-Zstd-Delta` is absent when the relay runs with `--delta-cache-mib 0`, and on the response to a request that carries no upstream API key.
 
 ## What the client sends
 
@@ -39,7 +39,7 @@ The relay keeps bases in a byte-bounded LRU in memory, so a restart or eviction 
 
 ## Who can use a base
 
-A base belongs to the route and the upstream credential of the request that stored it. A request with another credential gets the same 409 as for a base that never existed, even when it names the right hash. Without this, a caller who learned a hash can send a delta that copies another caller's history to the upstream under its own key. Callers that send no credential at all share one scope.
+A base belongs to the route and the upstream credential of the request that stored it. A request with another credential gets the same 409 as for a base that never existed, even when it names the right hash. Without this, a caller who learned a hash can send a delta that copies another caller's history to the upstream under its own key. A request with no credential gets no deltas: the relay keeps nothing for it and answers any base with 409.
 
 ## Limits
 

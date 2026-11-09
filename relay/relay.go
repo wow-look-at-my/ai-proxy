@@ -95,9 +95,9 @@ func New(cfg Config) (*Handler, error) {
 	return h, nil
 }
 
-func (h *Handler) advertise(w http.ResponseWriter) {
+func (h *Handler) advertise(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Accept-Encoding", zdelta.AcceptEncodingValue)
-	if h.cfg.Store != nil {
+	if h.cfg.Store != nil && hasCredential(r.Header) {
 		w.Header().Set(zdelta.DeltaHeader, zdelta.DeltaValue)
 	}
 }
@@ -112,7 +112,7 @@ func (h *Handler) match(path string) (Route, string, bool) {
 }
 
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	h.advertise(w)
+	h.advertise(w, r)
 	if h.cfg.Token != "" && r.Header.Get(TokenHeader) != h.cfg.Token {
 		writeError(w, http.StatusUnauthorized, "relay_unauthorized", "missing or wrong "+TokenHeader)
 		return
@@ -155,6 +155,17 @@ func storeScope(rt Route, header http.Header) string {
 	return hex.EncodeToString(sum.Sum(nil))
 }
 
+// hasCredential reports whether the request carries an upstream API key.
+// Deltas need one: without it, every caller would share one store scope.
+func hasCredential(header http.Header) bool {
+	for _, name := range credentialHeaders {
+		if strings.TrimSpace(header.Get(name)) != "" {
+			return true
+		}
+	}
+	return false
+}
+
 // decodeBody replaces a zstd body with the plain bytes it encodes. It writes
 // the error response itself and returns non-nil when the request must stop.
 func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request, scope string) error {
@@ -162,7 +173,8 @@ func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request, scope strin
 		return nil
 	}
 	encoding := strings.ToLower(strings.TrimSpace(r.Header.Get("Content-Encoding")))
-	keep := h.cfg.Store != nil && r.Header.Get(zdelta.DeltaHeader) != ""
+	deltas := h.cfg.Store != nil && hasCredential(r.Header)
+	keep := deltas && r.Header.Get(zdelta.DeltaHeader) != ""
 	baseHash := strings.ToLower(strings.TrimSpace(r.Header.Get(zdelta.BaseHeader)))
 	if encoding != "zstd" && !keep {
 		return nil
@@ -178,7 +190,7 @@ func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request, scope strin
 		var base []byte
 		if baseHash != "" {
 			var found bool
-			if h.cfg.Store != nil {
+			if deltas {
 				base, found = h.cfg.Store.Get(scope, baseHash)
 			}
 			if !found {

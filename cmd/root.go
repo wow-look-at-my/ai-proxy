@@ -25,7 +25,7 @@ func version() string {
 var rootCmd = &cobra.Command{
 	Use:     "ai-proxy",
 	Version: version(),
-	Short: "Byte-for-byte relay for LLM APIs that shrinks uploads with zstd",
+	Short:   "Byte-for-byte relay for LLM APIs that shrinks uploads with zstd",
 	Long: "ai-proxy forwards LLM API requests to their upstream without parsing them.\n" +
 		"It decodes zstd request bodies, including deltas against the previous\n" +
 		"request, so a client on a slow link uploads only what changed.",

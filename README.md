@@ -15,7 +15,21 @@ ai-proxy serve --listen :8317 \
   --route openai=https://api.openai.com
 ```
 
-A client then uses `http://host:8317/anthropic/v1` as its Anthropic base URL. Set `--token` (or `$AI_PROXY_TOKEN`) and send it in `X-AI-Proxy-Token` to keep strangers off the port.
+A client then uses `http://host:8317/anthropic/v1` as its Anthropic base URL and sends its own upstream key.
+
+To keep strangers off the port, set `--token` (or `$AI_PROXY_TOKEN`). A client then uses the token as its API key, and the relay swaps in the real key:
+
+```sh
+AI_PROXY_TOKEN=relay-secret \
+AI_PROXY_UPSTREAM_KEY_ANTHROPIC=sk-ant-... \
+ai-proxy serve --route anthropic=https://api.anthropic.com
+```
+
+```sh
+ANTHROPIC_BASE_URL=http://host:8317/anthropic ANTHROPIC_API_KEY=relay-secret claude
+```
+
+The token works. `--upstream-key name=KEY` also sets a key. A client that sends its own upstream key can put the token in `X-AI-Proxy-Token` instead.
 
 ## Delta protocol
 

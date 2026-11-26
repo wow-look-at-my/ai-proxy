@@ -44,6 +44,10 @@ level=WARN msg=request method=POST path=/nowhere/v1/messages status=404 upload=p
 
 `wire_bytes` against `plain_bytes` shows what the link saved. A line with an error status logs at `WARN`. No line means the client did not reach the relay.
 
+## Updates
+
+The relay serves the [docker-updater](https://github.com/wow-look-at-my/docker-updater) checks under `/.well-known/docker-updater/`. They need no token. `pre-update` holds an update while a request is in flight. The relay logs `update held` or `update allowed` for each answer.
+
 ## Delta protocol
 
 [docs/delta-protocol.md](docs/delta-protocol.md) describes the headers a client sends. Package `zdelta` holds the Go encoder.

@@ -17,19 +17,16 @@ ai-proxy serve --listen :8317 \
 
 A client then uses `http://host:8317/anthropic/v1` as its Anthropic base URL and sends its own upstream key.
 
-To keep strangers off the port, set `--token` (or `$AI_PROXY_TOKEN`). A client then uses the token as its API key, and the relay swaps in the real key:
+To keep strangers off the port, set `--token` (or `$AI_PROXY_TOKEN`). The relay token and the upstream key are then separate secrets. The client sends the token in `X-AI-Proxy-Token`, and its upstream key in the usual header. The relay checks and strips the token, and passes the key through untouched.
+
+Claude Code sends the extra header through `ANTHROPIC_CUSTOM_HEADERS`:
 
 ```sh
-AI_PROXY_TOKEN=relay-secret \
-AI_PROXY_UPSTREAM_KEY_ANTHROPIC=sk-ant-... \
-ai-proxy serve --route anthropic=https://api.anthropic.com
+ANTHROPIC_BASE_URL=http://host:8317/anthropic \
+ANTHROPIC_API_KEY=sk-ant-... \
+ANTHROPIC_CUSTOM_HEADERS='X-AI-Proxy-Token: relay-secret' \
+claude
 ```
-
-```sh
-ANTHROPIC_BASE_URL=http://host:8317/anthropic ANTHROPIC_API_KEY=relay-secret claude
-```
-
-The token works. `--upstream-key name=KEY` also sets a key. A client that sends its own upstream key can put the token in `X-AI-Proxy-Token` instead.
 
 ## Check that it works
 

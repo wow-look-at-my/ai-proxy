@@ -22,15 +22,13 @@ import (
 	"github.com/wow-look-at-my/ai-proxy/zdelta"
 )
 
-// TokenHeader can carry the relay's own access token.
+// TokenHeader carries the relay's own access token.
 const TokenHeader = "X-AI-Proxy-Token"
 
 // Route sends requests under Prefix to Upstream, with Prefix removed.
 type Route struct {
 	Prefix   string
 	Upstream *url.URL
-	// Key replaces the relay token when a client sends the token as its API key.
-	Key string
 }
 
 // ParseRoute reads "name=https://host/base". Requests to /name/... go to
@@ -55,7 +53,7 @@ type Config struct {
 	MaxBodyBytes int64
 	// Store keeps bodies for deltas. Nil turns deltas off, but plain zstd bodies are still decoded.
 	Store *zdelta.Store
-	// Token, when set, must arrive in TokenHeader or as the API key in a credential header.
+	// Token, when set, must arrive in TokenHeader.
 	Token string
 	// Transport reaches the upstreams. Nil means http.DefaultTransport.
 	Transport http.RoundTripper
@@ -116,26 +114,14 @@ func (h *Handler) match(path string) (Route, string, bool) {
 
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.advertise(w, r)
-	tokenKeys := h.tokenCredentials(r.Header)
-	if h.cfg.Token != "" && len(tokenKeys) == 0 && !h.isToken(r.Header.Get(TokenHeader)) {
-		writeError(w, http.StatusUnauthorized, "relay_unauthorized", "send the relay token as the API key (Authorization: Bearer, x-api-key) or in "+TokenHeader)
+	if h.cfg.Token != "" && subtle.ConstantTimeCompare([]byte(r.Header.Get(TokenHeader)), []byte(h.cfg.Token)) != 1 {
+		writeError(w, http.StatusUnauthorized, "relay_unauthorized", "missing or wrong "+TokenHeader+"; the upstream key goes in the usual API key header")
 		return
 	}
 	rt, rest, ok := h.match(r.URL.Path)
 	if !ok {
 		writeError(w, http.StatusNotFound, "relay_no_route", "no route for "+r.URL.Path)
 		return
-	}
-	if len(tokenKeys) > 0 && rt.Key == "" {
-		writeError(w, http.StatusUnauthorized, "relay_no_upstream_key", "the API key is the relay token, but route "+rt.Prefix+" has no upstream key; start the relay with --upstream-key")
-		return
-	}
-	for _, name := range tokenKeys {
-		if name == "Authorization" {
-			r.Header.Set(name, "Bearer "+rt.Key)
-			continue
-		}
-		r.Header.Set(name, rt.Key)
 	}
 	if err := h.decodeBody(w, r, storeScope(rt, r.Header)); err != nil {
 		return
@@ -155,25 +141,6 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 // credentialHeaders carry the upstream API key in the dialects the relay serves.
 var credentialHeaders = []string{"Authorization", "X-Api-Key", "X-Goog-Api-Key", "Api-Key"}
-
-func (h *Handler) isToken(value string) bool {
-	return h.cfg.Token != "" && subtle.ConstantTimeCompare([]byte(value), []byte(h.cfg.Token)) == 1
-}
-
-// tokenCredentials returns the credential headers whose API key is the relay token.
-func (h *Handler) tokenCredentials(header http.Header) []string {
-	var names []string
-	for _, name := range credentialHeaders {
-		value := strings.TrimSpace(header.Get(name))
-		if name == "Authorization" && len(value) > 7 && strings.EqualFold(value[:7], "bearer ") {
-			value = strings.TrimSpace(value[7:])
-		}
-		if h.isToken(value) {
-			names = append(names, name)
-		}
-	}
-	return names
-}
 
 // storeScope binds a stored body to the route and the upstream credential of
 // the request that sent it. A base hash alone is not enough to use the body. A

@@ -41,6 +41,16 @@ level=WARN msg=request method=POST path=/nowhere/v1/messages status=404 upload=p
 
 `wire_bytes` against `plain_bytes` shows what the link saved. A line with an error status logs at `WARN`. No line means the client did not reach the relay.
 
+## Latency
+
+Every relayed response carries a `Server-Timing` line with the relay's own share of the wait:
+
+```
+Server-Timing: relay-decode;dur=0.4, relay-upstream;dur=412.7;desc="anthropic"
+```
+
+`relay-decode` is the time to read and decode the request body. `relay-upstream` is the wait for the upstream's response headers, and `desc` names the route. A client subtracts both from its own wait to get the time on its link to the relay. A `Server-Timing` line from the upstream stays in the response.
+
 ## Updates
 
 The relay serves the [docker-updater](https://github.com/wow-look-at-my/docker-updater) checks under `/.well-known/docker-updater/`. They need no token. `pre-update` holds an update while a request is in flight. The relay logs `update held` or `update allowed` for each answer.

@@ -6,6 +6,8 @@ import (
 	"io"
 	"net/http"
 	"net/http/httptest"
+	"regexp"
+	"strconv"
 	"sync"
 	"testing"
 	"time"
@@ -351,4 +353,38 @@ func TestLongestPrefixWins(t *testing.T) {
 	post(t, srv.URL+"/x/y/v1/messages", []byte(`{}`), nil)
 	assert.Equal(t, "/v1/messages", b.last(t).path)
 	assert.Empty(t, a.reqs)
+}
+
+// The relay reports its own share of the latency. A metric the upstream sent stays.
+func TestServerTimingReportsTheUpstreamWait(t *testing.T) {
+	const wait = 40 * time.Millisecond
+	up := newUpstream(t, func(w http.ResponseWriter, r *http.Request) {
+		time.Sleep(wait)
+		w.Header().Set(TimingHeader, "inference;dur=12.5")
+		_, _ = w.Write([]byte(`{}`))
+	})
+	relay := newRelay(t, up, nil)
+
+	resp := post(t, relay.URL+"/anthropic/v1/messages", []byte(`{}`), nil)
+	lines := resp.Header.Values(TimingHeader)
+	require.Len(t, lines, 2, "the upstream's line, then the relay's line")
+	assert.Equal(t, "inference;dur=12.5", lines[0])
+
+	metrics := regexp.MustCompile(`^relay-decode;dur=([0-9.]+), relay-upstream;dur=([0-9.]+);desc="anthropic"$`).FindStringSubmatch(lines[1])
+	require.NotNil(t, metrics, lines[1])
+	decode, err := strconv.ParseFloat(metrics[1], 64)
+	require.NoError(t, err)
+	upstream, err := strconv.ParseFloat(metrics[2], 64)
+	require.NoError(t, err)
+	assert.GreaterOrEqual(t, upstream, float64(wait.Milliseconds()), "the upstream wait covers the upstream's delay")
+	assert.Less(t, decode, upstream, "a plain body takes no time to decode")
+}
+
+// The header is about a relayed request. An answer the relay wrote itself has none.
+func TestServerTimingIsAbsentFromTheRelaysOwnErrors(t *testing.T) {
+	up := newUpstream(t, nil)
+	relay := newRelay(t, up, nil)
+	resp := post(t, relay.URL+"/openai/v1/chat/completions", []byte(`{}`), nil)
+	require.Equal(t, http.StatusNotFound, resp.StatusCode)
+	assert.Empty(t, resp.Header.Values(TimingHeader))
 }

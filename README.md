@@ -28,6 +28,25 @@ ANTHROPIC_CUSTOM_HEADERS='X-AI-Proxy-Token: relay-secret' \
 claude
 ```
 
+## Check that it works
+
+The relay logs one line on stderr for each request it answers:
+
+```
+level=INFO msg=request method=POST path=/anthropic/v1/messages status=200 upload=plain wire_bytes=16026 response_bytes=11 duration=10ms
+level=INFO msg=request method=POST path=/anthropic/v1/messages status=200 upload=zstd wire_bytes=76 plain_bytes=16026 response_bytes=11 duration=1ms
+level=INFO msg=request method=POST path=/anthropic/v1/messages status=200 upload=delta wire_bytes=36 plain_bytes=16065 response_bytes=11 duration=1ms
+level=WARN msg=request method=POST path=/nowhere/v1/messages status=404 upload=plain wire_bytes=16026 response_bytes=97 duration=0s
+```
+
+`wire_bytes` against `plain_bytes` shows what the link saved. A line with an error status logs at `WARN`. No line means the client did not reach the relay.
+
+## Updates
+
+The relay serves the [docker-updater](https://github.com/wow-look-at-my/docker-updater) checks under `/.well-known/docker-updater/`. They need no token. `pre-update` holds an update while a request is in flight. The relay logs `update held` or `update allowed` for each answer.
+
+On `SIGTERM` the relay takes no new connection and finishes the requests in flight. It logs `draining`, then `drained`. The stop timeout of the container runtime is the limit.
+
 ## Delta protocol
 
 [docs/delta-protocol.md](docs/delta-protocol.md) describes the headers a client sends. Package `zdelta` holds the Go encoder.

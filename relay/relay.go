@@ -18,6 +18,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"sync/atomic"
+	"time"
 
 	"github.com/wow-look-at-my/ai-proxy/zdelta"
 )
@@ -66,6 +68,9 @@ type Handler struct {
 	routes []Route
 	proxy  *httputil.ReverseProxy
 	log    *slog.Logger
+	// started and inflight answer the docker-updater checks.
+	started  time.Time
+	inflight atomic.Int64
 }
 
 // New validates cfg and returns the relay.
@@ -83,7 +88,12 @@ func New(cfg Config) (*Handler, error) {
 	if logger == nil {
 		logger = slog.Default()
 	}
-	h := &Handler{cfg: cfg, routes: routes, log: logger}
+	for _, rt := range routes {
+		if rt.Prefix == "/"+reservedRoute || strings.HasPrefix(rt.Prefix, "/"+reservedRoute+"/") {
+			return nil, fmt.Errorf("route %s: the name %s is reserved", rt.Prefix, reservedRoute)
+		}
+	}
+	h := &Handler{cfg: cfg, routes: routes, log: logger, started: time.Now().UTC()}
 	h.proxy = &httputil.ReverseProxy{
 		Rewrite:       func(*httputil.ProxyRequest) {},
 		Transport:     cfg.Transport,
@@ -112,7 +122,72 @@ func (h *Handler) match(path string) (Route, string, bool) {
 	return Route{}, "", false
 }
 
+// upload is how one request body arrived. The request log line reports it.
+type upload struct {
+	// kind is plain, zstd or delta.
+	kind string
+	// wire is the body size the client sent.
+	wire  int64
+	plain int64
+}
+
+// tally records what the relay sent back. Unwrap lets http.ResponseController
+// reach Flush and Hijack on the real writer.
+type tally struct {
+	http.ResponseWriter
+	status int
+	bytes  int64
+}
+
+func (t *tally) Unwrap() http.ResponseWriter { return t.ResponseWriter }
+
+func (t *tally) WriteHeader(code int) {
+	// A 1xx status is not the final status.
+	if t.status == 0 && code >= 200 {
+		t.status = code
+	}
+	t.ResponseWriter.WriteHeader(code)
+}
+
+func (t *tally) Write(p []byte) (int, error) {
+	if t.status == 0 {
+		t.status = http.StatusOK
+	}
+	n, err := t.ResponseWriter.Write(p)
+	t.bytes += int64(n)
+	return n, err
+}
+
+// ServeHTTP relays one request and logs one line for it. The line has the path
+// only: a query can hold an API key.
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if strings.HasPrefix(r.URL.Path, updaterPrefix) {
+		h.updater(w, r)
+		return
+	}
+	h.inflight.Add(1)
+	defer h.inflight.Add(-1)
+	start := time.Now()
+	out := &tally{ResponseWriter: w}
+	up := &upload{kind: "plain", wire: r.ContentLength}
+	h.relay(out, r, up)
+
+	attrs := []any{"method", r.Method, "path", r.URL.Path, "status", out.status, "upload", up.kind}
+	if up.wire >= 0 {
+		attrs = append(attrs, "wire_bytes", up.wire)
+	}
+	if up.kind != "plain" {
+		attrs = append(attrs, "plain_bytes", up.plain)
+	}
+	attrs = append(attrs, "response_bytes", out.bytes, "duration", time.Since(start).Round(time.Millisecond))
+	level := slog.LevelInfo
+	if out.status >= 400 {
+		level = slog.LevelWarn
+	}
+	h.log.Log(r.Context(), level, "request", attrs...)
+}
+
+func (h *Handler) relay(w http.ResponseWriter, r *http.Request, up *upload) {
 	h.advertise(w, r)
 	if h.cfg.Token != "" && subtle.ConstantTimeCompare([]byte(r.Header.Get(TokenHeader)), []byte(h.cfg.Token)) != 1 {
 		writeError(w, http.StatusUnauthorized, "relay_unauthorized", "missing or wrong "+TokenHeader+"; the upstream key goes in the usual API key header")
@@ -123,7 +198,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusNotFound, "relay_no_route", "no route for "+r.URL.Path)
 		return
 	}
-	if err := h.decodeBody(w, r, storeScope(rt, r.Header)); err != nil {
+	if err := h.decodeBody(w, r, storeScope(rt, r.Header), up); err != nil {
 		return
 	}
 	r.Header.Del(zdelta.DeltaHeader)
@@ -169,7 +244,7 @@ func hasCredential(header http.Header) bool {
 
 // decodeBody replaces a zstd body with the plain bytes it encodes. It writes
 // the error response itself and returns non-nil when the request must stop.
-func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request, scope string) error {
+func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request, scope string, up *upload) error {
 	if r.Body == nil || r.Body == http.NoBody {
 		return nil
 	}
@@ -186,10 +261,13 @@ func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request, scope strin
 		writeError(w, http.StatusRequestEntityTooLarge, "relay_body_too_large", err.Error())
 		return err
 	}
+	up.wire = int64(len(raw))
 	plain := raw
 	if encoding == "zstd" {
+		up.kind = "zstd"
 		var base []byte
 		if baseHash != "" {
+			up.kind = "delta"
 			var found bool
 			if deltas {
 				base, found = h.cfg.Store.Get(scope, baseHash)
@@ -209,6 +287,7 @@ func (h *Handler) decodeBody(w http.ResponseWriter, r *http.Request, scope strin
 			writeError(w, http.StatusBadRequest, "zstd_invalid", err.Error())
 			return err
 		}
+		up.plain = int64(len(plain))
 		r.Header.Del("Content-Encoding")
 		h.log.Debug("decoded request body", "path", r.URL.Path, "wire_bytes", len(raw), "plain_bytes", len(plain), "delta", base != nil)
 	} else if baseHash != "" {

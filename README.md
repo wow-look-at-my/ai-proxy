@@ -38,6 +38,7 @@ The relay logs one line on stderr for each request it answers:
 ```
 level=INFO msg=request method=POST path=/anthropic/v1/messages status=200 upload=plain wire_bytes=16026 response_bytes=11 duration=10ms
 level=INFO msg=request method=POST path=/anthropic/v1/messages status=200 upload=zstd wire_bytes=76 plain_bytes=16026 response_bytes=11 duration=1ms
+level=INFO msg=request method=POST path=/anthropic/v1/messages status=200 upload=delta wire_bytes=36 plain_bytes=16065 response_bytes=11 duration=1ms
 level=WARN msg=request method=POST path=/nowhere/v1/messages status=404 upload=plain wire_bytes=16026 response_bytes=97 duration=0s
 ```
 

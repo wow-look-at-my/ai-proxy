@@ -283,48 +283,25 @@ func TestTokenIsRequiredAndNotForwarded(t *testing.T) {
 	assert.Empty(t, up.last(t).header.Get(TokenHeader))
 }
 
-// Stock clients can only set an API key. The token in the key header must
-// pass, and the upstream must get the route's real key in the same header.
-func TestTokenAsTheAPIKeyIsSwappedForTheUpstreamKey(t *testing.T) {
-	up := newUpstream(t, nil)
-	relay := newRelay(t, up, func(c *Config) {
-		c.Token = "secret"
-		c.Routes[0].Key = "sk-real"
-	})
-	cases := []struct {
-		name, header, value, want string
-	}{
-		{"openai bearer", "Authorization", "Bearer secret", "Bearer sk-real"},
-		{"lowercase bearer", "Authorization", "bearer secret", "Bearer sk-real"},
-		{"anthropic x-api-key", "X-Api-Key", "secret", "sk-real"},
-		{"gemini", "X-Goog-Api-Key", "secret", "sk-real"},
-		{"azure", "Api-Key", "secret", "sk-real"},
-	}
-	for _, tc := range cases {
-		t.Run(tc.name, func(t *testing.T) {
-			resp := post(t, relay.URL+"/anthropic/v1/messages", []byte(`{}`), map[string]string{tc.header: tc.value})
-			require.Equal(t, http.StatusOK, resp.StatusCode)
-			got := up.last(t).header
-			assert.Equal(t, tc.want, got.Get(tc.header))
-			assert.Equal(t, zdelta.DeltaValue, resp.Header.Get(zdelta.DeltaHeader))
-		})
-	}
-
-	resp := post(t, relay.URL+"/anthropic/v1/messages", []byte(`{}`), map[string]string{"Authorization": "Bearer wrong"})
-	assert.Equal(t, http.StatusUnauthorized, resp.StatusCode, "a key that is not the token is refused")
-}
-
-// Without an upstream key the relay cannot serve a token-as-key request.
-// It must refuse it, not forward the token upstream.
-func TestTokenAsTheAPIKeyNeedsAnUpstreamKey(t *testing.T) {
+// The relay token and the upstream key are secrets. The token opens the
+// relay only. The upstream key passes through untouched.
+func TestTokenAndUpstreamKeyAreSeparate(t *testing.T) {
 	up := newUpstream(t, nil)
 	relay := newRelay(t, up, func(c *Config) { c.Token = "secret" })
 
-	resp := post(t, relay.URL+"/anthropic/v1/messages", []byte(`{}`), map[string]string{"X-Api-Key": "secret"})
-	assert.Equal(t, http.StatusUnauthorized, resp.StatusCode)
-	body, _ := io.ReadAll(resp.Body)
-	assert.Contains(t, string(body), `"relay_no_upstream_key"`)
-	assert.Empty(t, up.reqs, "the token never reaches the upstream")
+	resp := post(t, relay.URL+"/anthropic/v1/messages", []byte(`{}`), map[string]string{
+		TokenHeader: "secret", "Authorization": "Bearer sk-upstream",
+	})
+	require.Equal(t, http.StatusOK, resp.StatusCode)
+	got := up.last(t).header
+	assert.Equal(t, "Bearer sk-upstream", got.Get("Authorization"))
+	assert.Empty(t, got.Get(TokenHeader))
+
+	resp = post(t, relay.URL+"/anthropic/v1/messages", []byte(`{}`), map[string]string{"Authorization": "Bearer secret"})
+	assert.Equal(t, http.StatusUnauthorized, resp.StatusCode, "the token in the API key header does not open the relay")
+	up.mu.Lock()
+	assert.Len(t, up.reqs, 1, "the refused request never reaches the upstream")
+	up.mu.Unlock()
 }
 
 func TestUnknownPrefixIs404(t *testing.T) {

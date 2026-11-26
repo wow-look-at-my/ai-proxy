@@ -18,6 +18,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"sync/atomic"
 	"time"
 
 	"github.com/wow-look-at-my/ai-proxy/zdelta"
@@ -69,6 +70,9 @@ type Handler struct {
 	routes []Route
 	proxy  *httputil.ReverseProxy
 	log    *slog.Logger
+	// started and inflight answer the docker-updater checks.
+	started  time.Time
+	inflight atomic.Int64
 }
 
 // New validates cfg and returns the relay.
@@ -86,7 +90,12 @@ func New(cfg Config) (*Handler, error) {
 	if logger == nil {
 		logger = slog.Default()
 	}
-	h := &Handler{cfg: cfg, routes: routes, log: logger}
+	for _, rt := range routes {
+		if rt.Prefix == "/"+reservedRoute || strings.HasPrefix(rt.Prefix, "/"+reservedRoute+"/") {
+			return nil, fmt.Errorf("route %s: the name %s is reserved", rt.Prefix, reservedRoute)
+		}
+	}
+	h := &Handler{cfg: cfg, routes: routes, log: logger, started: time.Now().UTC()}
 	h.proxy = &httputil.ReverseProxy{
 		Rewrite:       func(*httputil.ProxyRequest) {},
 		Transport:     cfg.Transport,
@@ -154,6 +163,12 @@ func (t *tally) Write(p []byte) (int, error) {
 // ServeHTTP relays one request and logs one line for it. The line has the path
 // only: a query can hold an API key.
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if strings.HasPrefix(r.URL.Path, updaterPrefix) {
+		h.updater(w, r)
+		return
+	}
+	h.inflight.Add(1)
+	defer h.inflight.Add(-1)
 	start := time.Now()
 	out := &tally{ResponseWriter: w}
 	up := &upload{kind: "plain", wire: r.ContentLength}

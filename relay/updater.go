@@ -15,6 +15,9 @@ const updaterPrefix = "/.well-known/docker-updater/"
 // reservedRoute is the route name that would hide updaterPrefix.
 const reservedRoute = ".well-known"
 
+// InFlight is the count of relayed requests that do not have their whole response yet.
+func (h *Handler) InFlight() int64 { return h.inflight.Load() }
+
 func (h *Handler) updater(w http.ResponseWriter, r *http.Request) {
 	switch strings.TrimPrefix(r.URL.Path, updaterPrefix) {
 	case "health":

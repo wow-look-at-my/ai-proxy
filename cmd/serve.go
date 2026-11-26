@@ -3,11 +3,15 @@
 package cmd
 
 import (
+	"context"
 	"fmt"
 	"log/slog"
+	"net"
 	"net/http"
 	"os"
+	"os/signal"
 	"strings"
+	"syscall"
 	"time"
 
 	"github.com/spf13/cobra"
@@ -101,12 +105,37 @@ var serveCmd = &cobra.Command{
 			Handler:           handler,
 			ReadHeaderTimeout: 30 * time.Second,
 		}
-		logger.Info("listening", "addr", serveFlags.listen, "delta_cache_mib", serveFlags.cacheMiB)
-		if err := server.ListenAndServe(); err != nil {
+		// The signals are caught before the port opens, so no request can meet the default action.
+		ctx, stop := signal.NotifyContext(cmd.Context(), syscall.SIGTERM, os.Interrupt)
+		defer stop()
+		// A second signal ends the process at once.
+		context.AfterFunc(ctx, stop)
+		ln, err := net.Listen("tcp", serveFlags.listen)
+		if err != nil {
 			return fmt.Errorf("serve: %w", err)
 		}
-		return nil
+		logger.Info("listening", "addr", ln.Addr().String(), "delta_cache_mib", serveFlags.cacheMiB)
+		return serveUntilDone(ctx, server, ln, handler.InFlight, logger)
 	},
+}
+
+// serveUntilDone serves on ln until ctx ends. It then takes no new connection
+// and returns when every request in flight has its whole response.
+func serveUntilDone(ctx context.Context, server *http.Server, ln net.Listener, inFlight func() int64, logger *slog.Logger) error {
+	failed := make(chan error, 1)
+	go func() { failed <- server.Serve(ln) }()
+	select {
+	case err := <-failed:
+		return fmt.Errorf("serve: %w", err)
+	case <-ctx.Done():
+	}
+	logger.Info("draining", "in_flight", inFlight())
+	// No deadline here: the stop timeout of the container runtime is the limit.
+	if err := server.Shutdown(context.Background()); err != nil {
+		return fmt.Errorf("drain: %w", err)
+	}
+	logger.Info("drained")
+	return nil
 }
 
 func init() {

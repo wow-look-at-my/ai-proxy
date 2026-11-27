@@ -5,4 +5,5 @@
 - `zdelta` is the wire protocol, shared with Go clients. A change to a header name or to the 409 shape is a breaking change for the grok-build client. Update `docs/delta-protocol.md` in the same commit.
 - The zstd CLI wrote `zdelta/testdata/*.zst` (libzstd). It proves the Go decoder reads what a libzstd client writes. Regenerate it with `zstd --patch-from`, not with the Go encoder.
 - `relay/updater.go` answers `/.well-known/docker-updater/health` and `pre-update` with no token. docker-updater sends no credential, and any other status on `pre-update` than 2xx, 404 or 501 holds every update.
+- A relayed response carries `Server-Timing` with `relay-decode` and `relay-upstream` (`ModifyResponse` in `relay/relay.go`). The grok-build client reads those metric names. The line is added, not set, so an upstream's own line stays.
 - One cobra subcommand per file in `cmd/`, each registering itself in `init`.

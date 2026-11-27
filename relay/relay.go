@@ -4,6 +4,7 @@ package relay
 
 import (
 	"bytes"
+	"context"
 	"crypto/sha256"
 	"crypto/subtle"
 	"encoding/hex"
@@ -26,6 +27,35 @@ import (
 
 // TokenHeader carries the relay's own access token.
 const TokenHeader = "X-AI-Proxy-Token"
+
+// TimingHeader carries the relay's own share of a request's latency.
+const TimingHeader = "Server-Timing"
+
+// The metric names in TimingHeader. A client reads them, so they do not change.
+const (
+	// TimingDecode is the time to read and decode the request body.
+	TimingDecode = "relay-decode"
+	// TimingUpstream is the wait for the upstream's response headers.
+	TimingUpstream = "relay-upstream"
+)
+
+// timing is what the relay measured before it called the upstream.
+type timing struct {
+	route  string
+	decode time.Duration
+	sent   time.Time
+}
+
+type timingKey struct{}
+
+// timingValue is the header line for t. The upstream wait ends now.
+func timingValue(t timing) string {
+	ms := func(d time.Duration) string {
+		return strconv.FormatFloat(float64(d.Microseconds())/1000, 'f', 1, 64)
+	}
+	return TimingDecode + ";dur=" + ms(t.decode) + ", " +
+		TimingUpstream + ";dur=" + ms(time.Since(t.sent)) + ";desc=" + strconv.Quote(t.route)
+}
 
 // Route sends requests under Prefix to Upstream, with Prefix removed.
 type Route struct {
@@ -98,6 +128,13 @@ func New(cfg Config) (*Handler, error) {
 		Rewrite:       func(*httputil.ProxyRequest) {},
 		Transport:     cfg.Transport,
 		FlushInterval: -1,
+		// Add keeps a metric the upstream sent. The relay still reads no body.
+		ModifyResponse: func(resp *http.Response) error {
+			if t, ok := resp.Request.Context().Value(timingKey{}).(timing); ok {
+				resp.Header.Add(TimingHeader, timingValue(t))
+			}
+			return nil
+		},
 		ErrorHandler: func(w http.ResponseWriter, r *http.Request, err error) {
 			h.log.Error("upstream request failed", "path", r.URL.Path, "err", err)
 			writeError(w, http.StatusBadGateway, "upstream_unreachable", err.Error())
@@ -188,6 +225,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) relay(w http.ResponseWriter, r *http.Request, up *upload) {
+	arrived := time.Now()
 	h.advertise(w, r)
 	if h.cfg.Token != "" && subtle.ConstantTimeCompare([]byte(r.Header.Get(TokenHeader)), []byte(h.cfg.Token)) != 1 {
 		writeError(w, http.StatusUnauthorized, "relay_unauthorized", "missing or wrong "+TokenHeader+"; the upstream key goes in the usual API key header")
@@ -205,7 +243,9 @@ func (h *Handler) relay(w http.ResponseWriter, r *http.Request, up *upload) {
 	r.Header.Del(zdelta.BaseHeader)
 	r.Header.Del(TokenHeader)
 
-	out := r.Clone(r.Context())
+	sent := time.Now()
+	measured := timing{route: strings.TrimPrefix(rt.Prefix, "/"), decode: sent.Sub(arrived), sent: sent}
+	out := r.Clone(context.WithValue(r.Context(), timingKey{}, measured))
 	out.URL.Scheme = rt.Upstream.Scheme
 	out.URL.Host = rt.Upstream.Host
 	out.URL.Path = joinPath(rt.Upstream.Path, rest)
